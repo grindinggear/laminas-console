@@ -25,7 +25,7 @@ class PasswordTest extends TestCase
      */
     protected $adapter;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->adapter = $this->prophesize(AbstractAdapter::class);
     }
