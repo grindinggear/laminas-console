@@ -22,13 +22,13 @@ class ConfirmTest extends TestCase
      */
     protected $adapter;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->adapter = new ConsoleAdapter();
         $this->adapter->stream = fopen('php://memory', 'w+');
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         fclose($this->adapter->stream);
     }

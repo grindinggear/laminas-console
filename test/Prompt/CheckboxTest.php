@@ -23,13 +23,13 @@ class CheckboxTest extends TestCase
      */
     protected $adapter;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->adapter = new ConsoleAdapter(false);
         $this->adapter->stream = fopen('php://memory', 'w+');
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         fclose($this->adapter->stream);
     }
