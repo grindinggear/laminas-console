@@ -11,6 +11,7 @@ namespace LaminasTest\Console\Prompt;
 use Laminas\Console\Adapter\AbstractAdapter;
 use Laminas\Console\Prompt\Password;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 /**
@@ -20,6 +21,8 @@ use Prophecy\Prophecy\ObjectProphecy;
  */
 class PasswordTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var AbstractAdapter|ObjectProphecy
      */
@@ -27,7 +30,7 @@ class PasswordTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->adapter = $this->prophesize(AbstractAdapter::class);
+        $this->adapter =  $this->prophesize(AbstractAdapter::class);
     }
 
     public function testCanPromptPassword()

@@ -133,17 +133,17 @@ class AbstractAdapterTest extends TestCase
         $this->assertEquals($text, $encodedText);
 
         //Console UTF8 - Text not utf8
-        $encodedText = $this->adapter->encodeText(utf8_decode($text));
+        $encodedText = $this->adapter->encodeText(mb_convert_encoding($text, 'ISO-8859-1'));
         $this->assertEquals($text, $encodedText);
 
         //Console not UTF8 - Text utf8
         $this->adapter->setTestUtf8(false);
         $encodedText = $this->adapter->encodeText($text);
-        $this->assertEquals(utf8_decode($text), $encodedText);
+        $this->assertEquals(mb_convert_encoding($text, 'ISO-8859-1'), $encodedText);
 
         //Console not UTF8 - Text not utf8
-        $encodedText = $this->adapter->encodeText(utf8_decode($text));
-        $this->assertEquals(utf8_decode($text), $encodedText);
+        $encodedText = $this->adapter->encodeText(mb_convert_encoding($text, 'ISO-8859-1'));
+        $this->assertEquals(mb_convert_encoding($text, 'ISO-8859-1'), $encodedText);
     }
 
     public function testWriteTextBlockSameAsWidth()
@@ -161,8 +161,8 @@ class AbstractAdapterTest extends TestCase
     {
         $text = 'thisisaverylongwordthatwontbreakproperlysothereyouhaveit and here is some more text';
         $expected = ['thisisaver', 'ylongwordt', 'hatwontbre', 'akproperly'
-           , 'sothereyou', 'haveit and', 'here is', 'some more'
-           , 'text'];
+            , 'sothereyou', 'haveit and', 'here is', 'some more'
+            , 'text'];
 
         ob_start();
         $this->adapter->writeTextBlock($text, 10);
