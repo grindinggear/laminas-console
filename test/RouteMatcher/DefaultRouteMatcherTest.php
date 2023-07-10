@@ -1351,7 +1351,7 @@ class DefaultRouteMatcherTest extends TestCase
     public function routeFiltersProvider()
     {
         $genericFilter = $this->getMockBuilder(FilterInterface::class)
-            ->setMethods(['filter'])
+            ->onlyMethods(['filter'])
             ->getMock();
         $genericFilter->expects($this->once())->method('filter')
             ->with('foobar')->will($this->returnValue('foobaz'));

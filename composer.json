@@ -26,6 +26,7 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
+        "ext-mbstring": "*",
         "laminas/laminas-stdlib": "^3.2.1"
     },
     "replace": {
@@ -37,6 +38,7 @@
         "laminas/laminas-filter": "^2.7.2",
         "laminas/laminas-json": "^2.6 || ^3.0",
         "laminas/laminas-validator": "^2.10.1",
+        "phpspec/prophecy-phpunit": "^2.0",
         "phpunit/phpunit": "^9"
     },
     "suggest": {
