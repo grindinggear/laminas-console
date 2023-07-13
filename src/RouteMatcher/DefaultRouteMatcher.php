@@ -14,6 +14,8 @@ use Laminas\Validator\ValidatorInterface;
 
 class DefaultRouteMatcher implements RouteMatcherInterface
 {
+    protected array $constraints;
+
     /**
      * Parts of the route.
      *
@@ -493,6 +495,7 @@ class DefaultRouteMatcher implements RouteMatcherInterface
                 $namesToMatch[] = $alias;
             }
         }
+
         return $namesToMatch;
     }
 
@@ -507,6 +510,7 @@ class DefaultRouteMatcher implements RouteMatcherInterface
         if (isset($this->aliases[$name])) {
             return $this->aliases[$name];
         }
+
         return $name;
     }
 
@@ -618,7 +622,6 @@ class DefaultRouteMatcher implements RouteMatcherInterface
                     continue;
                 }
             }
-
 
             /*
              * Value for flags is always boolean

@@ -30,7 +30,7 @@ class PasswordTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->adapter =  $this->prophesize(AbstractAdapter::class);
+        $this->adapter = $this->prophesize(AbstractAdapter::class);
     }
 
     public function testCanPromptPassword()
