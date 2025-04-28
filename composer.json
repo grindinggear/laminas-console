@@ -23,10 +23,6 @@
         "ext-mbstring": "*",
         "laminas/laminas-stdlib": "^3.2.1"
     },
-    "replace": {
-        "laminas/laminas-console": "^2.8.0",
-        "zendframework/zend-console": "^2.8.0"
-    },
     "require-dev": {
         "laminas/laminas-coding-standard": "~1.0.0",
         "laminas/laminas-filter": "^2.7.2",
